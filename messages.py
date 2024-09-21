@@ -4,7 +4,7 @@ from models import Poster
 
 def escape_markdown(text: str) -> str:
     # Escape special characters in MarkdownV2
-    escape_chars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']
+    escape_chars = ['_', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']
     for char in escape_chars:
         text = text.replace(char, f'\\{char}')
     return text
@@ -15,6 +15,5 @@ def poster_message(poster: Poster):
     text = f"""***{poster.title}***
 *{poster.date}*
 
-
     """
-    return escape_markdown(text)+"\n{link}"
+    return escape_markdown(text)+f'\n{link}'
