@@ -20,7 +20,7 @@ async def bot_starter():
             await bot.send_photo(chat_id=config.chat_id, photo=poster.image,
                                  caption=messages.poster_message(poster))
             # return
-            await db.add_poster(poster.id)
+            await db.add_poster(poster)
         await asyncio.sleep(30)
 
 
