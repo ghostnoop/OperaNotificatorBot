@@ -15,6 +15,6 @@ def poster_message(poster: Poster):
     text = f"""***{poster.title}***
 *{poster.date}*
 
-{link}
+
     """
-    return escape_markdown(text)
+    return escape_markdown(text)+"\n{link}"
